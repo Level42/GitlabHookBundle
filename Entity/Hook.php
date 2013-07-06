@@ -1,6 +1,14 @@
 <?php
+/**
+ * This file is part of the GitlabHookBundle package
+ *
+ * (c) Level42 <level42.dev@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Level42\GitlabHookBundle\Entity;
 
-namespace Level42\Bundle\GitlabHookBundle\Entity;
 /**
  * This class represent a hook message
  * send by GitLab
