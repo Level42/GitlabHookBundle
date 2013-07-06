@@ -9,6 +9,10 @@
  */
 namespace Level42\GitlabHookBundle\Services;
 
+use Level42\GitlabHookBundle\Exceptions\InvalidJsonHookMessageException;
+
+use Level42\GitlabHookBundle\Exceptions\EmptyHookMessageException;
+
 use Level42\GitlabHookBundle\Entity\Hook;
 
 /**
@@ -24,6 +28,9 @@ interface HookInterface {
      * @param string $hookContent
      * 
      * @return Hook
+     * 
+     * @throws EmptyHookMessageException       When the message is empty
+     * @throws InvalidJsonHookMessageException When the message can not be read like json
      */
     public function analyseHook($hookContent);
 }
