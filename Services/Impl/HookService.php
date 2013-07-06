@@ -9,6 +9,9 @@
  */
 namespace Level42\GitlabHookBundle\Services\Impl;
 
+
+use Level42\GitlabHookBundle\Exceptions\EmptyHookMessageException;
+use Level42\GitlabHookBundle\Exceptions\InvalidJsonHookMessageException;
 use Level42\GitlabHookBundle\Entity\Author;
 use Level42\GitlabHookBundle\Entity\Commit;
 use Level42\GitlabHookBundle\Entity\Repository;
@@ -29,8 +32,16 @@ class HookService implements HookInterface
      */
     public function analyseHook($hookContent)
     {
+        if ($hookContent == null) {
+            throw new EmptyHookMessageException();
+        }
+        
         $hookJson = json_decode($hookContent);
 
+        if ($hookContent == null) {
+        	throw new InvalidJsonHookMessageException();
+        }
+        
         $hook = new Hook();
 
         $hook->setBefore($hookJson->before);
