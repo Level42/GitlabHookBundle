@@ -7,8 +7,9 @@
         "email": "level42.dev@gmail.com"
     },
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "Level42\\GitlabHookBundle": "" }
     },
+    "target-dir": "Level42/GitlabHookBundle",
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.1.*"
