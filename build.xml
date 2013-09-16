@@ -74,7 +74,8 @@
 	<target name="phpcpd" description="Analyse de duplication de code">
 		<exec executable="phpcpd">
 			<arg line="--log-pmd ${build.dir}/qualimetry/phpcpd-result.xml
-			--exclude ${env.WORKSPACE}/vendor/**,${env.WORKSPACE}/Tests/app/cache/**,${env.WORKSPACE}/Tests/app/logs/**
+			--exclude vendor
+			--exclude cache
 			${env.WORKSPACE}" />
 		</exec>
 	</target>
