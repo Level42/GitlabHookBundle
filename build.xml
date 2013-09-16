@@ -100,7 +100,8 @@
 			<arg value="-l" />
 			<fileset dir="${env.WORKSPACE}">
 				<include name="**/*.php" />
-				<exclude name="vendor/**/*.php,Tests/app/cache/**,Tests/app/logs/**" />
+				<exclude name="**/vendor/**" />
+				<exclude name="**/cache/**" />
 			</fileset>
 		</apply>
 	</target>
