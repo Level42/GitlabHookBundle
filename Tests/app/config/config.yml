@@ -1,0 +1,15 @@
+imports:
+    - { resource: parameters.yml }
+        
+framework:
+    test:                      ~
+    secret:                    'tua'
+    router:
+        resource:              "%kernel.root_dir%/config/routing.yml"
+        strict_requirements:   %kernel.debug%
+    form:                      true
+    csrf_protection:           true
+    validation:                { enable_annotations: true }
+    default_locale:            fr
+    session:
+        storage_id:            session.storage.mock_file
