@@ -22,52 +22,54 @@ use Level42\GitlabHookBundle\Entity\Hook;
  * 
  * @author fperinel
  */
-class HookService implements HookInterface {
+class HookService implements HookInterface
+{
 
-	/**
-	 * (non-PHPdoc)
-	 * @see \Level42\GitlabHookBundle\Services\HookInterface::analyseHook()
-	 */
-	public function analyseHook($hookContent) {
-		
-		if ($hookContent == null) {
-			throw new EmptyHookMessageException();
-		}
+    /**
+     * (non-PHPdoc)
+     * @see \Level42\GitlabHookBundle\Services\HookInterface::analyseHook()
+     */
+    public function analyseHook($hookContent)
+    {
 
-		$hookJson = json_decode($hookContent);
+        if ($hookContent == null) {
+            throw new EmptyHookMessageException();
+        }
 
-		if ($hookJson == null) {
-			throw new InvalidJsonHookMessageException();
-		}
+        $hookJson = json_decode($hookContent);
 
-		$hook = new Hook();
+        if ($hookJson == null) {
+            throw new InvalidJsonHookMessageException();
+        }
 
-		$hook->setBefore($hookJson->before);
-		$hook->setAfter($hookJson->after);
-		$hook->setRef($hookJson->ref);
-		$hook->setUserId($hookJson->user_id);
-		$hook->setUserName($hookJson->user_name);
-		$hook->setTotalCommitsCount($hookJson->total_commits_count);
+        $hook = new Hook();
 
-		$hook
-				->setRepository(
-						new Repository($hookJson->repository->name,
-								$hookJson->repository->url,
-								$hookJson->repository->description,
-								$hookJson->repository->homepage));
+        $hook->setBefore($hookJson->before);
+        $hook->setAfter($hookJson->after);
+        $hook->setRef($hookJson->ref);
+        $hook->setUserId($hookJson->user_id);
+        $hook->setUserName($hookJson->user_name);
+        $hook->setTotalCommitsCount($hookJson->total_commits_count);
 
-		foreach ($hookJson->commits as $commitJson) {
+        $hook
+                ->setRepository(
+                        new Repository($hookJson->repository->name,
+                                $hookJson->repository->url,
+                                $hookJson->repository->description,
+                                $hookJson->repository->homepage));
 
-			$author = new Author($commitJson->author->name,
-					$commitJson->author->email);
+        foreach ($hookJson->commits as $commitJson) {
 
-			$commit = new Commit($commitJson->id, $commitJson->message,
-					$commitJson->timestamp, $commitJson->url, $author);
+            $author = new Author($commitJson->author->name,
+                    $commitJson->author->email);
 
-			$hook->addCommit($commit);
-		}
+            $commit = new Commit($commitJson->id, $commitJson->message,
+                    $commitJson->timestamp, $commitJson->url, $author);
 
-		return $hook;
-	}
+            $hook->addCommit($commit);
+        }
+
+        return $hook;
+    }
 
 }

@@ -15,125 +15,135 @@ namespace Level42\GitlabHookBundle\Entity;
  * @author fperinel
  *
  */
-class Repository {
+class Repository
+{
 
-	/**
-	 * Repository name.
-	 * 
-	 * @var string
-	 */
-	private $name;
+    /**
+     * Repository name.
+     * 
+     * @var string
+     */
+    private $name;
 
-	/**
-	 * Repository URL.
-	 * 
-	 * @var string
-	 */
-	private $url;
+    /**
+     * Repository URL.
+     * 
+     * @var string
+     */
+    private $url;
 
-	/**
-	 * Repository description.
-	 * 
-	 * @var string
-	 */
-	private $description;
+    /**
+     * Repository description.
+     * 
+     * @var string
+     */
+    private $description;
 
-	/**
-	 * Repository homepage.
-	 * 
-	 * @var string
-	 */
-	private $homepage;
+    /**
+     * Repository homepage.
+     * 
+     * @var string
+     */
+    private $homepage;
 
-	/**
-	 * Create an object
-	 * 
-	 * @param string $name        Repository name
-	 * @param string $url         Repository URL
-	 * @param string $description Repository description
-	 * @param string $homepage    Repository homepage
-	 */
-	public function __construct($name, $url, $description, $homepage) {
-		$this->name = $name;
-		$this->url = $url;
-		$this->description = $description;
-		$this->homepage = $homepage;
-	}
+    /**
+     * Create an object
+     * 
+     * @param string $name        Repository name
+     * @param string $url         Repository URL
+     * @param string $description Repository description
+     * @param string $homepage    Repository homepage
+     */
+    public function __construct($name, $url, $description, $homepage)
+    {
+        $this->name = $name;
+        $this->url = $url;
+        $this->description = $description;
+        $this->homepage = $homepage;
+    }
 
-	/**
-	 * Return name.
-	 * 
-	 * @return string Name
-	 */
-	public function getName() {
+    /**
+     * Return name.
+     * 
+     * @return string Name
+     */
+    public function getName()
+    {
 
-		return $this->name;
-	}
+        return $this->name;
+    }
 
-	/**
-	 * Set name.
-	 * 
-	 * @param string $name Name
-	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
+    /**
+     * Set name.
+     * 
+     * @param string $name Name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-	/**
-	 * Return URL.
-	 * 
-	 * @return string URL
-	 */
-	public function getUrl() {
+    /**
+     * Return URL.
+     * 
+     * @return string URL
+     */
+    public function getUrl()
+    {
 
-		return $this->url;
-	}
+        return $this->url;
+    }
 
-	/**
-	 * Set URL.
-	 * 
-	 * @param string $url URL
-	 */
-	public function setUrl($url) {
-		$this->url = $url;
-	}
+    /**
+     * Set URL.
+     * 
+     * @param string $url URL
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 
-	/**
-	 * Return Description.
-	 * 
-	 * @return string Description
-	 */
-	public function getDescription() {
+    /**
+     * Return Description.
+     * 
+     * @return string Description
+     */
+    public function getDescription()
+    {
 
-		return $this->description;
-	}
+        return $this->description;
+    }
 
-	/**
-	 * Set Description.
-	 * 
-	 * @param string $description Description
-	 */
-	public function setDescription($description) {
-		$this->description = $description;
-	}
+    /**
+     * Set Description.
+     * 
+     * @param string $description Description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
 
-	/**
-	 * Return Homepage.
-	 * 
-	 * @return string Homepage
-	 */
-	public function getHomepage() {
+    /**
+     * Return Homepage.
+     * 
+     * @return string Homepage
+     */
+    public function getHomepage()
+    {
 
-		return $this->homepage;
-	}
+        return $this->homepage;
+    }
 
-	/**
-	 * Set Homepage.
-	 * 
-	 * @param string $homepage Homepage
-	 */
-	public function setHomepage($homepage) {
-		$this->homepage = $homepage;
-	}
+    /**
+     * Set Homepage.
+     * 
+     * @param string $homepage Homepage
+     */
+    public function setHomepage($homepage)
+    {
+        $this->homepage = $homepage;
+    }
 
 }

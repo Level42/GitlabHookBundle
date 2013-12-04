@@ -17,18 +17,20 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
  */
-class Configuration implements ConfigurationInterface {
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getConfigTreeBuilder() {
-		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root('level42_gitlab_hook');
+class Configuration implements ConfigurationInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function getConfigTreeBuilder()
+    {
+        $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('level42_gitlab_hook');
 
-		// Here you should define the parameters that are allowed to
-		// configure your bundle. See the documentation linked above for
-		// more information on that topic.
+        // Here you should define the parameters that are allowed to
+        // configure your bundle. See the documentation linked above for
+        // more information on that topic.
 
-		return $treeBuilder;
-	}
+        return $treeBuilder;
+    }
 }

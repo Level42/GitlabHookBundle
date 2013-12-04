@@ -15,69 +15,75 @@ namespace Level42\GitlabHookBundle\Entity;
  * @author fperinel
  *
  */
-class Author {
+class Author
+{
 
-	/**
-	 * Author name.
-	 * 
-	 * @var string
-	 */
-	private $name;
+    /**
+     * Author name.
+     * 
+     * @var string
+     */
+    private $name;
 
-	/**
-	 * Author email.
-	 * 
-	 * @var string
-	 */
-	private $email;
+    /**
+     * Author email.
+     * 
+     * @var string
+     */
+    private $email;
 
-	/**
-	 * Create an object.
-	 * 
-	 * @param string $name  Author name
-	 * @param string $email Author email
-	 */
-	public function __construct($name, $email) {
-		$this->name = $name;
-		$this->email = $email;
-	}
+    /**
+     * Create an object.
+     * 
+     * @param string $name  Author name
+     * @param string $email Author email
+     */
+    public function __construct($name, $email)
+    {
+        $this->name = $name;
+        $this->email = $email;
+    }
 
-	/**
-	 * Return name.
-	 * 
-	 * @return string Name
-	 */
-	public function getName() {
+    /**
+     * Return name.
+     * 
+     * @return string Name
+     */
+    public function getName()
+    {
 
-		return $this->name;
-	}
+        return $this->name;
+    }
 
-	/**
-	 * Set Name.
-	 * 
-	 * @param string $name Name
-	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
+    /**
+     * Set Name.
+     * 
+     * @param string $name Name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-	/**
-	 * Return email.
-	 * 
-	 * @return string Email
-	 */
-	public function getEmail() {
+    /**
+     * Return email.
+     * 
+     * @return string Email
+     */
+    public function getEmail()
+    {
 
-		return $this->email;
-	}
+        return $this->email;
+    }
 
-	/**
-	 * Set Email.
-	 * 
-	 * @param string $email Email
-	 */
-	public function setEmail($email) {
-		$this->email = $email;
-	}
+    /**
+     * Set Email.
+     * 
+     * @param string $email Email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
 
 }
