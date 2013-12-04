@@ -11,9 +11,6 @@ namespace Level42\GitlabHookBundle\Entity;
 
 /**
  * This class represent a commit send by GitLab
- * 
- * @author fperinel
- *
  */
 class Commit
 {

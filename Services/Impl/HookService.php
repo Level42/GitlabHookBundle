@@ -19,8 +19,6 @@ use Level42\GitlabHookBundle\Entity\Hook;
 
 /**
  * Implementation of Hook message manager
- * 
- * @author fperinel
  */
 class HookService implements HookInterface
 {

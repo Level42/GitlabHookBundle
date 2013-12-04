@@ -38,27 +38,5 @@ spl_autoload_register(
             }
         });
 
-/**
- * Load classes from path
- * @param unknown $path
- */
-function loadClasses($path)
-{
-
-    if ($handle = opendir($path)) {
-        while (false !== ($entry = readdir($handle))) {
-            if (substr($entry, strlen($entry) - 4, strlen($entry)) == '.php') {
-                require_once $path . '/' . $entry;
-            }
-        }
-        closedir($handle);
-    }
-}
-
-/*loadClasses(__DIR__ . '/../Annotation');
-loadClasses(__DIR__ . '/../Exceptions');
-loadClasses(__DIR__ . '/../Manager');
-loadClasses(__DIR__ . '/../Mapping');*/
-
 // Chargement du kernel
 require_once __DIR__ . '/app/GitlabHookTestKernel.php';

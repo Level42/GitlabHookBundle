@@ -11,8 +11,6 @@ namespace Level42\GitlabHookBundle\Exceptions;
 
 /**
  * Specific exception when hook message is empty
- * @author fperinel
- *
  */
 class EmptyHookMessageException extends \Exception
 {

@@ -17,8 +17,6 @@ use Level42\GitlabHookBundle\Entity\Hook;
 
 /**
  * Interface to manage GitLab hook messages
- * @author fperinel
- *
  */
 interface HookInterface
 {

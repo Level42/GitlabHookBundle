@@ -12,9 +12,6 @@ namespace Level42\GitlabHookBundle\Entity;
 /**
  * This class represent a hook message
  * send by GitLab
- * 
- * @author fperinel
- *
  */
 class Hook
 {

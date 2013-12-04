@@ -11,8 +11,6 @@ namespace Level42\GitlabHookBundle\Exceptions;
 
 /**
  * Specific exception when hook message can not be read by json_encode
- * @author fperinel
- *
  */
 class InvalidJsonHookMessageException extends \Exception
 {
