@@ -11,44 +11,51 @@ namespace Level42\GitlabHookBundle\Entity;
 
 /**
  * This class represent a author send by GitLab
- * 
- * @author fperinel
- *
  */
 class Author
 {
+
     /**
-     * Author name
+     * Author name.
+     * 
      * @var string
      */
     private $name;
 
     /**
-     * Author email
+     * Author email.
+     * 
      * @var string
      */
     private $email;
 
     /**
-     * Create an object
+     * Create an object.
+     * 
      * @param string $name  Author name
      * @param string $email Author email
      */
-    public function __construct($name, $email) {
+    public function __construct($name, $email)
+    {
         $this->name = $name;
         $this->email = $email;
     }
-    
+
     /**
-     * @return the string
+     * Return name.
+     * 
+     * @return string Name
      */
     public function getName()
     {
+
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * Set Name.
+     * 
+     * @param string $name Name
      */
     public function setName($name)
     {
@@ -56,15 +63,20 @@ class Author
     }
 
     /**
-     * @return the string
+     * Return email.
+     * 
+     * @return string Email
      */
     public function getEmail()
     {
+
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * Set Email.
+     * 
+     * @param string $email Email
      */
     public function setEmail($email)
     {

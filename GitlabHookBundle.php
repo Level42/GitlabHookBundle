@@ -11,6 +11,9 @@ namespace Level42\GitlabHookBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class Level42GitlabHookBundle extends Bundle
+/**
+ * Bundle main class
+ */
+class GitlabHookBundle extends Bundle
 {
 }

@@ -11,68 +11,78 @@ namespace Level42\GitlabHookBundle\Entity;
 
 /**
  * This class represent a commit send by GitLab
- * 
- * @author fperinel
- *
  */
 class Commit
 {
+
     /**
-     * Commit ID
+     * Commit ID.
+     * 
      * @var string
      */
     private $id;
 
     /**
-     * Commit message
+     * Commit message.
+     * 
      * @var string
      */
     private $message;
 
     /**
-     * Commit date time
+     * Commit date time.
+     * 
      * @var string
      */
     private $timestamp;
 
     /**
-     * Commit URL
+     * Commit URL.
+     * 
      * @var string
      */
     private $url;
 
     /**
-     * Commit author
+     * Commit author.
+     * 
      * @var Author
      */
     private $author;
 
     /**
      * Create an object
+     * 
      * @param string $id        Commit ID
      * @param string $message   Commit message
      * @param string $timestamp Commit date time
      * @param string $url       Commit URL
      * @param Author $author    Commit author
      */
-    public function __construct($id, $message, $timestamp, $url, $author) {
+    public function __construct($id, $message, $timestamp, $url, $author)
+    {
         $this->id = $id;
         $this->message = $message;
         $this->timestamp = $timestamp;
         $this->url = $url;
         $this->author = $author;
     }
-    
+
     /**
-     * @return the string
+     * Return ID
+     * 
+     * @return integer ID
      */
     public function getId()
     {
+
         return $this->id;
     }
 
     /**
-     * @param string $id
+     * Set ID
+     * 
+     * @param integer $id ID
      */
     public function setId($id)
     {
@@ -80,15 +90,20 @@ class Commit
     }
 
     /**
-     * @return the string
+     * Return message.
+     * 
+     * @return string Message
      */
     public function getMessage()
     {
+
         return $this->message;
     }
 
     /**
-     * @param string $message
+     * Set message.
+     * 
+     * @param string $message Message
      */
     public function setMessage($message)
     {
@@ -96,15 +111,20 @@ class Commit
     }
 
     /**
-     * @return the string
+     * Get Timestamp.
+     * 
+     * @return string Timestamp
      */
     public function getTimestamp()
     {
+
         return $this->timestamp;
     }
 
     /**
-     * @param string $timestamp
+     * Set Timestamp.
+     * 
+     * @param string $timestamp Timestamp
      */
     public function setTimestamp($timestamp)
     {
@@ -112,15 +132,20 @@ class Commit
     }
 
     /**
-     * @return the string
+     * Return URL.
+     * 
+     *  @return string URL
      */
     public function getUrl()
     {
+
         return $this->url;
     }
 
     /**
-     * @param string $url
+     * Return URL.
+     * 
+     * @param string $url URL
      */
     public function setUrl($url)
     {
@@ -128,15 +153,20 @@ class Commit
     }
 
     /**
-     * @return Author the Author
+     * Return Author.
+     * 
+     * @return Author Author
      */
     public function getAuthor()
     {
+
         return $this->author;
     }
 
     /**
-     * @param Author $author
+     * Set Author.
+     * 
+     * @param Author $author Author
      */
     public function setAuthor(Author $author)
     {
