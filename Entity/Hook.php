@@ -148,7 +148,7 @@ class Hook
     }
 
     /**
-     * @return the Repository
+     * @return Repository the Repository
      */
     public function getRepository()
     {

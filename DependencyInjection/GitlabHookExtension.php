@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class Level42GitlabHookExtension extends Extension
+class GitlabHookExtension extends Extension
 {
     /**
      * {@inheritDoc}

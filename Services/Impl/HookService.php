@@ -38,7 +38,7 @@ class HookService implements HookInterface
         
         $hookJson = json_decode($hookContent);
 
-        if ($hookContent == null) {
+        if ($hookJson == null) {
         	throw new InvalidJsonHookMessageException();
         }
         
