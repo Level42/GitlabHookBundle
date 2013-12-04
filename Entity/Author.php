@@ -15,60 +15,69 @@ namespace Level42\GitlabHookBundle\Entity;
  * @author fperinel
  *
  */
-class Author
-{
-    /**
-     * Author name
-     * @var string
-     */
-    private $name;
+class Author {
 
-    /**
-     * Author email
-     * @var string
-     */
-    private $email;
+	/**
+	 * Author name.
+	 * 
+	 * @var string
+	 */
+	private $name;
 
-    /**
-     * Create an object
-     * @param string $name  Author name
-     * @param string $email Author email
-     */
-    public function __construct($name, $email) {
-        $this->name = $name;
-        $this->email = $email;
-    }
-    
-    /**
-     * @return the string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
+	/**
+	 * Author email.
+	 * 
+	 * @var string
+	 */
+	private $email;
 
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
+	/**
+	 * Create an object.
+	 * 
+	 * @param string $name  Author name
+	 * @param string $email Author email
+	 */
+	public function __construct($name, $email) {
+		$this->name = $name;
+		$this->email = $email;
+	}
 
-    /**
-     * @return the string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
+	/**
+	 * Return name.
+	 * 
+	 * @return string Name
+	 */
+	public function getName() {
 
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
+		return $this->name;
+	}
+
+	/**
+	 * Set Name.
+	 * 
+	 * @param string $name Name
+	 */
+	public function setName($name) {
+		$this->name = $name;
+	}
+
+	/**
+	 * Return email.
+	 * 
+	 * @return string Email
+	 */
+	public function getEmail() {
+
+		return $this->email;
+	}
+
+	/**
+	 * Set Email.
+	 * 
+	 * @param string $email Email
+	 */
+	public function setEmail($email) {
+		$this->email = $email;
+	}
 
 }

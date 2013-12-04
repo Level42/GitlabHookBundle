@@ -15,11 +15,11 @@ namespace Level42\GitlabHookBundle\Exceptions;
  *
  */
 class InvalidJsonHookMessageException extends \Exception {
-    
-    /**
-     * Create an exception
-     */
-    public function __construct() {
-        parent::__construct("Hook message can not be read like json");
-    }
+
+	/**
+	 * Create an exception
+	 */
+	public function __construct() {
+		parent::__construct("Hook message can not be read like json");
+	}
 }

@@ -15,11 +15,11 @@ namespace Level42\GitlabHookBundle\Exceptions;
  *
  */
 class EmptyHookMessageException extends \Exception {
-    
-    /**
-     * Create an exception
-     */
-    public function __construct() {
-        parent::__construct("Hook message is empty");
-    }
+
+	/**
+	 * Create an exception
+	 */
+	public function __construct() {
+		parent::__construct("Hook message is empty");
+	}
 }

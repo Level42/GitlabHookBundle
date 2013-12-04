@@ -16,196 +16,227 @@ namespace Level42\GitlabHookBundle\Entity;
  * @author fperinel
  *
  */
-class Hook
-{
+class Hook {
 
-    /**
-     * Hashcode of previous commit
-     * @var string
-     */
-    private $before;
+	/**
+	 * Hashcode of previous commit.
+	 * 
+	 * @var string
+	 */
+	private $before;
 
-    /**
-     * Hashcode of current commit
-     * @var string
-     */
-    private $after;
+	/**
+	 * Hashcode of current commit.
+	 * 
+	 * @var string
+	 */
+	private $after;
 
-    /**
-     * Repository references
-     * @var string
-     */
-    private $ref;
+	/**
+	 * Repository references.
+	 * 
+	 * @var string
+	 */
+	private $ref;
 
-    /**
-     * User ID
-     * @var integer
-     */
-    private $userId;
+	/**
+	 * User ID.
+	 * 
+	 * @var integer
+	 */
+	private $userId;
 
-    /**
-     * User name
-     * @var string
-     */
-    private $userName;
+	/**
+	 * User name.
+	 * 
+	 * @var string
+	 */
+	private $userName;
 
-    /**
-     * Hook repository
-     * @var Repository
-     */
-    private $repository;
+	/**
+	 * Hook repository.
+	 * 
+	 * @var Repository
+	 */
+	private $repository;
 
-    /**
-     * List of commits
-     * @var Commit[]
-     */
-    private $commits;
+	/**
+	 * List of commits.
+	 * 
+	 * @var Commit[]
+	 */
+	private $commits;
 
-    /**
-     * Number of commits
-     * @var integer
-     */
-    private $totalCommitsCount;
+	/**
+	 * Number of commits.
+	 * 
+	 * @var integer
+	 */
+	private $totalCommitsCount;
 
-    /**
-     * @return the string
-     */
-    public function getBefore()
-    {
-        return $this->before;
-    }
+	/**
+	 * Return the previous commit hash.
+	 * 
+	 * @return string Previous commit hash.
+	 */
+	public function getBefore() {
 
-    /**
-     * @param string $before
-     */
-    public function setBefore($before)
-    {
-        $this->before = $before;
-    }
+		return $this->before;
+	}
 
-    /**
-     * @return the string
-     */
-    public function getAfter()
-    {
-        return $this->after;
-    }
+	/**
+	 * Set previous commit hash.
+	 * 
+	 * @param string $before Previous commit hash
+	 */
+	public function setBefore($before) {
+		$this->before = $before;
+	}
 
-    /**
-     * @param string $after
-     */
-    public function setAfter($after)
-    {
-        $this->after = $after;
-    }
+	/**
+	 * Return the next commit hash.
+	 * 
+	 * @return string Next commit hash.
+	 */
+	public function getAfter() {
 
-    /**
-     * @return the string
-     */
-    public function getRef()
-    {
-        return $this->ref;
-    }
+		return $this->after;
+	}
 
-    /**
-     * @param string $ref
-     */
-    public function setRef($ref)
-    {
-        $this->ref = $ref;
-    }
+	/**
+	 * Set next commit hash.
+	 * 
+	 * @param string $after Next commit hash.
+	 */
+	public function setAfter($after) {
+		$this->after = $after;
+	}
 
-    /**
-     * @return the integer
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
+	/**
+	 * Return Ref
+	 * 
+	 * @return string Ref
+	 */
+	public function getRef() {
 
-    /**
-     * @param  $userId
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
+		return $this->ref;
+	}
 
-    /**
-     * @return the string
-     */
-    public function getUserName()
-    {
-        return $this->userName;
-    }
+	/**
+	 * Set Ref.
+	 * 
+	 * @param string $ref Ref
+	 */
+	public function setRef($ref) {
+		$this->ref = $ref;
+	}
 
-    /**
-     * @param string $userName
-     */
-    public function setUserName($userName)
-    {
-        $this->userName = $userName;
-    }
+	/**
+	 * Return user ID.
+	 * 
+	 * @return integer User Id
+	 */
+	public function getUserId() {
 
-    /**
-     * @return Repository the Repository
-     */
-    public function getRepository()
-    {
-        return $this->repository;
-    }
+		return $this->userId;
+	}
 
-    /**
-     * @param  $repository
-     */
-    public function setRepository($repository)
-    {
-        $this->repository = $repository;
-    }
+	/**
+	 * Set User ID.
+	 * 
+	 * @param integer $userId User Id
+	 */
+	public function setUserId($userId) {
+		$this->userId = $userId;
+	}
 
-    /**
-     * @return the Commit[]
-     */
-    public function getCommits()
-    {
-        return $this->commits;
-    }
+	/**
+	 * Return User name.
+	 * 
+	 * @return string User name
+	 */
+	public function getUserName() {
 
-    /**
-     * @param Commit[] $commits
-     */
-    public function setCommits($commits)
-    {
-        $this->commits = $commits;
-    }
+		return $this->userName;
+	}
 
-    /**
-     * Add a commit to the list
-     * @param Commit $commit
-     */
-    public function addCommit(Commit $commit)
-    {
-        if (!is_array($this->commits)) {
-            $this->commits = array();
-        }
-        
-        $this->commits[] = $commit;
-    }
+	/**
+	 * Set User name.
+	 * 
+	 * @param string $userName User name
+	 */
+	public function setUserName($userName) {
+		$this->userName = $userName;
+	}
 
-    /**
-     * @return the integer
-     */
-    public function getTotalCommitsCount()
-    {
-        return $this->totalCommitsCount;
-    }
+	/**
+	 * Return Repository.
+	 * 
+	 * @return Repository Repository
+	 */
+	public function getRepository() {
 
-    /**
-     * @param  $totalCommitsCount
-     */
-    public function setTotalCommitsCount($totalCommitsCount)
-    {
-        $this->totalCommitsCount = $totalCommitsCount;
-    }
+		return $this->repository;
+	}
+
+	/**
+	 * Set Repository.
+	 * 
+	 * @param Repository $repository Repository
+	 */
+	public function setRepository($repository) {
+		$this->repository = $repository;
+	}
+
+	/**
+	 * Return list of commits.
+	 * 
+	 * @return Commit[] List of commits
+	 */
+	public function getCommits() {
+
+		return $this->commits;
+	}
+
+	/**
+	 * Set the list of commits.
+	 * 
+	 * @param Commit[] $commits List of commits
+	 */
+	public function setCommits($commits) {
+		$this->commits = $commits;
+	}
+
+	/**
+	 * Add a commit to the list.
+	 * 
+	 * @param Commit $commit New commit to add
+	 */
+	public function addCommit(Commit $commit) {
+		if (!is_array($this->commits)) {
+			$this->commits = array();
+		}
+
+		$this->commits[] = $commit;
+	}
+
+	/**
+	 * Return the number of commit in the push.
+	 * 
+	 * @return integer Number of commit in the push.
+	 */
+	public function getTotalCommitsCount() {
+
+		return $this->totalCommitsCount;
+	}
+
+	/**
+	 * Set the number of commit in the push.
+	 * 
+	 * @param integer $totalCommitsCount Number of commit in the push.
+	 */
+	public function setTotalCommitsCount($totalCommitsCount) {
+		$this->totalCommitsCount = $totalCommitsCount;
+	}
 
 }

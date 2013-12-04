@@ -15,132 +15,153 @@ namespace Level42\GitlabHookBundle\Entity;
  * @author fperinel
  *
  */
-class Commit
-{
-    /**
-     * Commit ID
-     * @var string
-     */
-    private $id;
+class Commit {
 
-    /**
-     * Commit message
-     * @var string
-     */
-    private $message;
+	/**
+	 * Commit ID.
+	 * 
+	 * @var string
+	 */
+	private $id;
 
-    /**
-     * Commit date time
-     * @var string
-     */
-    private $timestamp;
+	/**
+	 * Commit message.
+	 * 
+	 * @var string
+	 */
+	private $message;
 
-    /**
-     * Commit URL
-     * @var string
-     */
-    private $url;
+	/**
+	 * Commit date time.
+	 * 
+	 * @var string
+	 */
+	private $timestamp;
 
-    /**
-     * Commit author
-     * @var Author
-     */
-    private $author;
+	/**
+	 * Commit URL.
+	 * 
+	 * @var string
+	 */
+	private $url;
 
-    /**
-     * Create an object
-     * @param string $id        Commit ID
-     * @param string $message   Commit message
-     * @param string $timestamp Commit date time
-     * @param string $url       Commit URL
-     * @param Author $author    Commit author
-     */
-    public function __construct($id, $message, $timestamp, $url, $author) {
-        $this->id = $id;
-        $this->message = $message;
-        $this->timestamp = $timestamp;
-        $this->url = $url;
-        $this->author = $author;
-    }
-    
-    /**
-     * @return the string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	/**
+	 * Commit author.
+	 * 
+	 * @var Author
+	 */
+	private $author;
 
-    /**
-     * @param string $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
+	/**
+	 * Create an object
+	 * 
+	 * @param string $id        Commit ID
+	 * @param string $message   Commit message
+	 * @param string $timestamp Commit date time
+	 * @param string $url       Commit URL
+	 * @param Author $author    Commit author
+	 */
+	public function __construct($id, $message, $timestamp, $url, $author) {
+		$this->id = $id;
+		$this->message = $message;
+		$this->timestamp = $timestamp;
+		$this->url = $url;
+		$this->author = $author;
+	}
 
-    /**
-     * @return the string
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
+	/**
+	 * Return ID
+	 * 
+	 * @return integer ID
+	 */
+	public function getId() {
 
-    /**
-     * @param string $message
-     */
-    public function setMessage($message)
-    {
-        $this->message = $message;
-    }
+		return $this->id;
+	}
 
-    /**
-     * @return the string
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
+	/**
+	 * Set ID
+	 * 
+	 * @param integer $id ID
+	 */
+	public function setId($id) {
+		$this->id = $id;
+	}
 
-    /**
-     * @param string $timestamp
-     */
-    public function setTimestamp($timestamp)
-    {
-        $this->timestamp = $timestamp;
-    }
+	/**
+	 * Return message.
+	 * 
+	 * @return string Message
+	 */
+	public function getMessage() {
 
-    /**
-     * @return the string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
+		return $this->message;
+	}
 
-    /**
-     * @param string $url
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-    }
+	/**
+	 * Set message.
+	 * 
+	 * @param string $message Message
+	 */
+	public function setMessage($message) {
+		$this->message = $message;
+	}
 
-    /**
-     * @return Author the Author
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
+	/**
+	 * Get Timestamp.
+	 * 
+	 * @return string Timestamp
+	 */
+	public function getTimestamp() {
 
-    /**
-     * @param Author $author
-     */
-    public function setAuthor(Author $author)
-    {
-        $this->author = $author;
-    }
+		return $this->timestamp;
+	}
+
+	/**
+	 * Set Timestamp.
+	 * 
+	 * @param string $timestamp Timestamp
+	 */
+	public function setTimestamp($timestamp) {
+		$this->timestamp = $timestamp;
+	}
+
+	/**
+	 * Return URL.
+	 * 
+	 *  @return string URL
+	 */
+	public function getUrl() {
+
+		return $this->url;
+	}
+
+	/**
+	 * Return URL.
+	 * 
+	 * @param string $url URL
+	 */
+	public function setUrl($url) {
+		$this->url = $url;
+	}
+
+	/**
+	 * Return Author.
+	 * 
+	 * @return Author Author
+	 */
+	public function getAuthor() {
+
+		return $this->author;
+	}
+
+	/**
+	 * Set Author.
+	 * 
+	 * @param Author $author Author
+	 */
+	public function setAuthor(Author $author) {
+		$this->author = $author;
+	}
 
 }

@@ -21,16 +21,16 @@ use Level42\GitlabHookBundle\Entity\Hook;
  *
  */
 interface HookInterface {
-    
-    /**
-     * Analyze the hook message and create an object "Hook"
-     * 
-     * @param string $hookContent
-     * 
-     * @return Hook
-     * 
-     * @throws EmptyHookMessageException       When the message is empty
-     * @throws InvalidJsonHookMessageException When the message can not be read like json
-     */
-    public function analyseHook($hookContent);
+
+	/**
+	 * Analyze the hook message and create an object "Hook"
+	 * 
+	 * @param string $hookContent Hook json content
+	 * 
+	 * @return Hook Hook parsed
+	 * 
+	 * @throws EmptyHookMessageException       When the message is empty
+	 * @throws InvalidJsonHookMessageException When the message can not be read like json
+	 */
+	public function analyseHook($hookContent);
 }
