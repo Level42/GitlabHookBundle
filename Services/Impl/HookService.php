@@ -24,6 +24,8 @@ class HookService implements HookInterface
 {
 
     /**
+     * {@inheritDoc}
+     * 
      * (non-PHPdoc)
      * @see \Level42\GitlabHookBundle\Services\HookInterface::analyseHook()
      */
@@ -49,20 +51,19 @@ class HookService implements HookInterface
         $hook->setUserName($hookJson->user_name);
         $hook->setTotalCommitsCount($hookJson->total_commits_count);
 
-        $hook
-                ->setRepository(
-                        new Repository($hookJson->repository->name,
-                                $hookJson->repository->url,
-                                $hookJson->repository->description,
-                                $hookJson->repository->homepage));
+        $hook->setRepository(
+            new Repository($hookJson->repository->name,
+                $hookJson->repository->url,
+                $hookJson->repository->description,
+                $hookJson->repository->homepage));
 
         foreach ($hookJson->commits as $commitJson) {
 
             $author = new Author($commitJson->author->name,
-                    $commitJson->author->email);
+                $commitJson->author->email);
 
             $commit = new Commit($commitJson->id, $commitJson->message,
-                    $commitJson->timestamp, $commitJson->url, $author);
+                $commitJson->timestamp, $commitJson->url, $author);
 
             $hook->addCommit($commit);
         }
