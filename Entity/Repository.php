@@ -11,32 +11,34 @@ namespace Level42\GitlabHookBundle\Entity;
 
 /**
  * This class represent a repository send by GitLab
- * 
- * @author fperinel
- *
  */
 class Repository
 {
+
     /**
-     * Repository name
+     * Repository name.
+     * 
      * @var string
      */
     private $name;
 
     /**
-     * Repository URL
+     * Repository URL.
+     * 
      * @var string
      */
     private $url;
 
     /**
-     * Repository description
+     * Repository description.
+     * 
      * @var string
      */
     private $description;
 
     /**
-     * Repository homepage
+     * Repository homepage.
+     * 
      * @var string
      */
     private $homepage;
@@ -49,23 +51,29 @@ class Repository
      * @param string $description Repository description
      * @param string $homepage    Repository homepage
      */
-    public function __construct($name, $url, $description, $homepage) {
+    public function __construct($name, $url, $description, $homepage)
+    {
         $this->name = $name;
         $this->url = $url;
         $this->description = $description;
         $this->homepage = $homepage;
     }
-    
+
     /**
-     * @return the string
+     * Return name.
+     * 
+     * @return string Name
      */
     public function getName()
     {
+
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * Set name.
+     * 
+     * @param string $name Name
      */
     public function setName($name)
     {
@@ -73,15 +81,20 @@ class Repository
     }
 
     /**
-     * @return the string
+     * Return URL.
+     * 
+     * @return string URL
      */
     public function getUrl()
     {
+
         return $this->url;
     }
 
     /**
-     * @param string $url
+     * Set URL.
+     * 
+     * @param string $url URL
      */
     public function setUrl($url)
     {
@@ -89,15 +102,20 @@ class Repository
     }
 
     /**
-     * @return the string
+     * Return Description.
+     * 
+     * @return string Description
      */
     public function getDescription()
     {
+
         return $this->description;
     }
 
     /**
-     * @param string $description
+     * Set Description.
+     * 
+     * @param string $description Description
      */
     public function setDescription($description)
     {
@@ -105,15 +123,20 @@ class Repository
     }
 
     /**
-     * @return the string
+     * Return Homepage.
+     * 
+     * @return string Homepage
      */
     public function getHomepage()
     {
+
         return $this->homepage;
     }
 
     /**
-     * @param string $homepage
+     * Set Homepage.
+     * 
+     * @param string $homepage Homepage
      */
     public function setHomepage($homepage)
     {

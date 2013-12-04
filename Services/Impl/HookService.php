@@ -9,7 +9,6 @@
  */
 namespace Level42\GitlabHookBundle\Services\Impl;
 
-
 use Level42\GitlabHookBundle\Exceptions\EmptyHookMessageException;
 use Level42\GitlabHookBundle\Exceptions\InvalidJsonHookMessageException;
 use Level42\GitlabHookBundle\Entity\Author;
@@ -20,28 +19,29 @@ use Level42\GitlabHookBundle\Entity\Hook;
 
 /**
  * Implementation of Hook message manager
- * 
- * @author fperinel
  */
 class HookService implements HookInterface
 {
 
     /**
+     * {@inheritDoc}
+     * 
      * (non-PHPdoc)
      * @see \Level42\GitlabHookBundle\Services\HookInterface::analyseHook()
      */
     public function analyseHook($hookContent)
     {
+
         if ($hookContent == null) {
             throw new EmptyHookMessageException();
         }
-        
+
         $hookJson = json_decode($hookContent);
 
-        if ($hookContent == null) {
-        	throw new InvalidJsonHookMessageException();
+        if ($hookJson == null) {
+            throw new InvalidJsonHookMessageException();
         }
-        
+
         $hook = new Hook();
 
         $hook->setBefore($hookJson->before);
@@ -52,18 +52,18 @@ class HookService implements HookInterface
         $hook->setTotalCommitsCount($hookJson->total_commits_count);
 
         $hook->setRepository(
-                        new Repository($hookJson->repository->name,
-                                $hookJson->repository->url,
-                                $hookJson->repository->description,
-                                $hookJson->repository->homepage) );
+            new Repository($hookJson->repository->name,
+                $hookJson->repository->url,
+                $hookJson->repository->description,
+                $hookJson->repository->homepage));
 
         foreach ($hookJson->commits as $commitJson) {
 
             $author = new Author($commitJson->author->name,
-                    $commitJson->author->email);
+                $commitJson->author->email);
 
             $commit = new Commit($commitJson->id, $commitJson->message,
-                    $commitJson->timestamp, $commitJson->url, $author);
+                $commitJson->timestamp, $commitJson->url, $author);
 
             $hook->addCommit($commit);
         }

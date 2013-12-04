@@ -17,17 +17,16 @@ use Level42\GitlabHookBundle\Entity\Hook;
 
 /**
  * Interface to manage GitLab hook messages
- * @author fperinel
- *
  */
-interface HookInterface {
-    
+interface HookInterface
+{
+
     /**
      * Analyze the hook message and create an object "Hook"
      * 
-     * @param string $hookContent
+     * @param string $hookContent Hook json content
      * 
-     * @return Hook
+     * @return Hook Hook parsed
      * 
      * @throws EmptyHookMessageException       When the message is empty
      * @throws InvalidJsonHookMessageException When the message can not be read like json
